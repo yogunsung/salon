@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AngularJS</title>
+<style type="text/css">
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak
+{
+	display: none ! important;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+} 
+</style>
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/main.css"> -->
+<script type="text/javascript" src="vendor/require/require.js"></script>
+<script type="text/javascript" src="app/components/require.config.js"></script>
+<script>require(['app'], function () {})</script>
+</head>
+<body>
+	<div>
+		<!-- <h1>演示数据双向绑定</h1>
+		<label class="">Name:</label>
+		<input id="name" class="form-control" type="text" ng-init="yourName='Everybody'" ng-model="yourName" placeholder="Enter a name here">
+		<hr>
+		<h1>Hello, {{yourName}}!</h1> -->
+		<!-- chrome终端输入：
+		$('#name').scope().yourName = 'World';
+		$('#name').scope().$digest(); -->
+		
+	</div>
+  <!-- <p ng-init=" name='World' ">Hello {{name}}!</p>
+	<p>Name: <input type="text" ng-model="name"></p>
+	<p class="ng-cloak">You wrote: {{ name }}</p> 
+	<p ng-cloak >You wrote: {{ name }}</p> 
+	<p>You wrote: <span ng-bind="name"></span></p>  -->
+	
+	<!-- <div ng-cloak>
+		单价： <input class="form-control" type="number" min=0 ng-model="price" ng-init="price = 299">
+        <br>
+        数量： <input class="form-control" type="number" min=0 ng-model="quantity" ng-init="quantity = 1">
+        <br>
+        总价： {{ quantity * price }}
+	</div>
+	
+	<div id="test" ng-controller="FilterCtrl" ng-cloak>
+		<span>{{ amount | currency:'￥' }}</span><br>
+		<span>{{date | date : 'yyyy-MM-dd HH:mm:ss' }}</span><br>
+		<span>{{ "uppercase" | uppercase }}</span><br>
+		<span>{{ "LOWERCASE" | lowercase }}</span><br>
+		<span>{{ "This is NG TEST!!!" | lowercase | testreplace }}</span>
+	</div> -->
+	
+	<!-- <div ng-controller="AlertCtrl" ng-cloak>dismiss-on-timeout="5000" ng-show="$last"
+  	<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" dismiss-on-timeout="2000">{{alert.msg}}</alert>
+  	<button class='btn btn-info' ng-click="addAlert()">Add Alert</button>
+	</div> -->
+	
+	<ul ng-controller="CoffeeCtrl" ng-show="false">
+		<!-- <li ng-repeat="greet in greetings">
+			<span>Hello {{greet}}!</span>
+		</li> -->
+	</ul>
+	
+	<div ng-cloak>
+		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="alert.close()" dismiss-on-timeout="2000">{{alert.msg}}</alert>
+	</div>
+	
+	<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarCtrl">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <a class="navbar-brand" href="#">AngularJS</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">特性 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/feature/two-way">双向数据绑定</a></li>
+            <li><a href="#">模板</a></li>
+            <li><a href="#">MVVM</a></li>
+            <li><a href="#">依赖注入</a></li>
+            <li><a href="#">指令</a></li>
+            <li><a href="#">路由</a></li>
+          </ul>
+        </li>
+        <li ng-class="{active:isActive('/comprise')}" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">组成部分 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/comprise/bootstrap">启动</a></li>
+            <li><a href="#/comprise/run">执行</a></li>
+            <li><a href="#/comprise/scope">作用域</a></li>
+            <li class="divider"></li>
+            <li><a href="#/comprise/controller">控制器</a></li>
+          </ul>
+        </li>
+				<!-- <li ng-repeat="menu1 in navbar" class="dropdown" ng-cloak>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ menu1.label }} 
+					<b class="caret"></b>
+				</a>
+					<ul class="dropdown-menu menu-top">
+						<li ng-repeat="menu2 in menu1.children" class="dropdown-submenu">
+							<a tabindex="-1" href="#{{ menu1.prefix }}/{{ menu2.link }}">{{ menu2.label }}</a>
+							<ul ng-show="menu2.children.length > 0" class="dropdown-menu">
+								<li ng-repeat="menu3 in menu2.children">
+									<a href="?{{ menu3.label }}" ng-click="go(menu3.link)">{{ menu3.label }}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li> -->
+			</ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+        	<select class="form-control" ng-model="selectedVal" ng-options="option.jsId as option.jsName for option in options" ng-change="printSelect()">
+        		<option value="">--请选择--</option>
+        	</select>
+        </div>
+        <!-- <button type="submit" class="btn btn-default" ng-click="open()">Submit</button> -->
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">技术支持</a></li>
+            <li><a href="#">关于我们</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div ng-controller="ModalCtrl"  style="margin: 5px;" ng-cloak>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn btn-default" ng-click="open()">Open me!</button>
+    <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+    <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+	</div>
+	
+	<div ng-controller="githubCtrl" ng-style="githubStyle" ng-cloak>
+	  <label for="username">Type in a GitHub username</label>
+	  <input class="form-control" type="text" ng-model="username" placeholder="Enter a GitHub username, like auser" />
+	  <pre ng-show="username">{{ message }}</pre>
+	</div>
+
+	<!-- <div ng-view></div> -->
+</body>
+</html>

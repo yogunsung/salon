@@ -1,0 +1,51 @@
+[
+    {
+        "label": "特性",
+        "prefix": "feature",
+        "children": [
+            {
+                "label": "双向数据绑定",
+                "link": "two-way",
+                "children": []
+            },
+            {
+                "label": "模板",
+                "children": []
+            },
+            {
+                "label": "MVVM",
+                "link": "#",
+                "children": []
+            },
+            {
+                "label": "依赖注入",
+                "children": []
+            },
+            {
+                "label": "指令",
+                "children": []
+            }
+        ]
+    },
+ 
+    {
+        "label": "组成部分",
+        "prefix": "comprise",
+        "children": [
+            {
+                "label": "启动",
+                "link": "bootstrap"
+            },
+            {
+                "label": "执行",
+                "link": "run",
+                "children": []
+            },
+            {
+                "label": "作用域",
+                "link": "scope",
+                "children": []
+            }
+        ]
+    }
+]

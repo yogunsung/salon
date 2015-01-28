@@ -1,0 +1,22 @@
+<div style="margin: 10px;">
+	<hr />
+	<h3>Route : scope.html</h3>
+	<img src="assets/images/concepts-scope.png" />
+	<ul>
+		<li ng-repeat="step in [
+		'浏览器载入HTML，然后把它解析成DOM', 
+		'浏览器载入angular.js脚本',
+		'AngularJS等到DOMContentLoaded事件触发',
+		'AngularJS寻找ng-app指令，这个指令指示了应用的边界',
+		'使用ng-app中指定的模块来配置注入器($injector)',
+		'注入器($injector)是用来创建编译服务($compile service)和根作用域($rootScope)',
+		'编译服务($compile service)是用来编译DOM并把它链接到根作用域($rootScope)',
+		'ng-init指令将World赋给作用域里的name这个变',
+		'通过{{name}}的替换，整个表达式变成了Hello World'
+		]">
+			{{ step }}
+		</li>
+	</ul>
+	
+	<p ng-init=" name='World' ">Hello {{name}}!</p>
+</div>
